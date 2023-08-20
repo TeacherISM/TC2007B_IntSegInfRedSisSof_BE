@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_spectacular',
+    'SEL4C.app1',  # Add the correct app name here
 ]
 
 MIDDLEWARE = [
