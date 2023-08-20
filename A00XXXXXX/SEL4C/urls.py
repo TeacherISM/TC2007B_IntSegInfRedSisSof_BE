@@ -20,7 +20,8 @@ from rest_framework import routers
 from SEL4C.app1 import views
 from drf_spectacular.views import SpectacularAPIView
 from drf_spectacular.views import SpectacularRedocView, SpectacularSwaggerView
-
+from django.urls import path
+from SEL4C.app1.views import homePageView
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -39,4 +40,5 @@ urlpatterns = [
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     # Redoc UI:
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path("home", homePageView, name="home"),
 ]

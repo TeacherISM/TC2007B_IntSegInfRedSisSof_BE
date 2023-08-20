@@ -2,7 +2,10 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from SEL4C.app1.serializers import UserSerializer, GroupSerializer
+from django.http import HttpResponse
 
+def homePageView(request):
+    return HttpResponse("{\"message\" : \"Hello World\"}")
 
 class UserViewSet(viewsets.ModelViewSet):
     """
