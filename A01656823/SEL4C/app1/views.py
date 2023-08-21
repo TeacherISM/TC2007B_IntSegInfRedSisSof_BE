@@ -4,8 +4,6 @@ from rest_framework import permissions
 from SEL4C.app1.serializers import UserSerializer, GroupSerializer
 
 
-
-# Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
