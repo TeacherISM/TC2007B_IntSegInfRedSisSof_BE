@@ -23,3 +23,6 @@ SEL4C/SEL4C/wsgi.py
 Notebooks/.DS_Store
 SEL4C/app1/models.py
 .DS_Store
+Notebooks/.ipynb_checkpoints/A01661893-checkpoint.ipynb
+*.ipynb
+README.md
