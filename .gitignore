@@ -1,3 +1,5 @@
 virtualEnv
-A01660986/__pycache__
-A01660986/app1/__pycache__
+*.pyc
+*.pyo
+**/__pycache__/
+.vscode/
