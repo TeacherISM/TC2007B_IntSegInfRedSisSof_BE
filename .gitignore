@@ -1,4 +1,11 @@
-<<<<<<< HEAD
+451/A01660986_FCZ_ACT4_2
+virtualEnv
+*.pyc
+*.pyo
+**/__pycache__/
+.vscode/
+
+HEAD
 # Django #
 *.log
 *.pot
@@ -136,6 +143,3 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
-=======
-A01662245/virtualEnv/
->>>>>>> origin/master
