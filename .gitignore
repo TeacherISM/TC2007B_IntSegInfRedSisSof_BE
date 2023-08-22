@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks,django
 
+### Mac OS ###
+
+.DS_Store
+
 ### Python ###
 
 virtualEnv/
