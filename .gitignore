@@ -23,4 +23,4 @@ SEL4C/SEL4C/__pycache__/urls.cpython-39.pyc
 SEL4C/SEL4C/__pycache__/wsgi.cpython-39.pyc
 SEL4C/SEL4C/asgi.py
 SEL4C/SEL4C/wsgi.py
-*.DS_Store
+.DS_Store
