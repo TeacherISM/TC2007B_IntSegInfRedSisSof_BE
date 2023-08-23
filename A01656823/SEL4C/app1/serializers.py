@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-
+from .models import telefonoModel
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -12,3 +12,9 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+        
+
+class TelefonoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = telefonoModel
+        field = {'name','brand','sell_date'}
