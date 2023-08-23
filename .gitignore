@@ -1,0 +1,4 @@
+#Ignora los archivos temporales y ocultos 
+.*
+#Ignora el caché
+__pycache__
