@@ -16,4 +16,15 @@ class GroupViewSet(viewsets.ModelViewSet):
 	"""
 	queryset = Group.objects.all()
 	serializer_class = GroupSerializer
-	permission_classes = (permissions.IsAuthenticated)
+	permission_classes = [permissions.IsAuthenticated]
+
+from .models import ActivityModel 				# Import your model
+from .serializers import ActivitySerializer 	# Import your serializer
+
+class HomeViewSet(viewsets.ModelViewSet):
+	"""
+	API endpoint that allows MyModel to be viewed or edited
+	"""
+	queryset = ActivityModel.objects.all() 				# Set the queryset for the view
+	serializer_class = ActivitySerializer 				# Set the serializer class
+	permission_classes = [permissions.IsAuthenticated]	# Set the permissions classes

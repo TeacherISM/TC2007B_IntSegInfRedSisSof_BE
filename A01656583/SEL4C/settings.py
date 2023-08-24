@@ -32,10 +32,13 @@ ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
 
 INSTALLED_APPS = [
+    'SEL4C.app1',   # Add the correct app name here
+    'drf_spectacular',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
