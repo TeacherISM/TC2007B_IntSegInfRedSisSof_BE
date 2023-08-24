@@ -1,5 +1,4 @@
 /virtualEnv
-*.DS_Store
 *.pyc
 *.sqlite3
 *.ipynb_checkpoints
