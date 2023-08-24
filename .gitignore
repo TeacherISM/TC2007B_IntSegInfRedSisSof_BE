@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+*.pyc
+*.sqlite3
+*.ipynb_checkpoints
+=======
+<<<<<<< HEAD
 # Django #
 *.log
 *.pot
@@ -139,3 +144,4 @@ GitHub.sublime-settings
 =======
 A01662245/virtualEnv/
 >>>>>>> origin/master
+>>>>>>> 3a749c15ee0517ddd0ea02012269ba729ed7f6c6
