@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
+from .models import ticketGenerator
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -9,5 +10,10 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
-        field = ['url', 'name']
+        fields = ['url', 'name']
+
+class TicketSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ticketGenerator
+        fields = ['id', 'nombre', 'asiento', 'hora']
         

@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from SEL4C.app1 import views
+from drf_spectacular.views import SpectacularAPIView
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'boletos', views.TicketViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framwork'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framwork')),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
 ]
