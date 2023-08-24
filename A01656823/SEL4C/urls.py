@@ -26,11 +26,12 @@ urlpatterns = [
 
 from django.urls import include, path
 from rest_framework import routers
-from SEL4C.app1.views import UserViewSet, GroupViewSet
+from SEL4C.app1.views import UserViewSet, GroupViewSet,TelefonoViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
+router.register(r'telefono',TelefonoViewSet) 
 
 # Wire up our API using automatic URL routing.
 # Additionaly, we include login URLs for the browsable API.

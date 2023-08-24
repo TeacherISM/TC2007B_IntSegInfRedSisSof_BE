@@ -1,10 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class telefonoModel(models.Model):
-    name = models.Charfield(max_length = 100)
-    brand = models.TextField(())
-    sell_date = models.DateTimeField(auto_now = True)
+class TelefonoModel(models.Model):
+    name = models.TextField()
+    brand = models.CharField(max_length=50)
+    quantity = models.BigIntegerField()
     
 
 def __str__(self):

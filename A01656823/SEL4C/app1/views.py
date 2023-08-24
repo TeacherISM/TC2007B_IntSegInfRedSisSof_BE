@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User, Group
+from .models import  TelefonoModel
 from rest_framework import viewsets
 from rest_framework import permissions
-from SEL4C.app1.serializers import UserSerializer, GroupSerializer
+from SEL4C.app1.serializers import UserSerializer, GroupSerializer, TelefonoSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -19,4 +20,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class TelefonoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = TelefonoModel.objects.all()
+    serializer_class = TelefonoSerializer
     permission_classes = [permissions.IsAuthenticated]
