@@ -22,6 +22,6 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 class NftViewSet(viewsets.ModelViewSet):
-    queryset = Nft.object.all()
+    queryset = Nft.objects.all()
     serializer_class = NftSerializer
     permission_classes = [permissions.IsAuthenticated]
