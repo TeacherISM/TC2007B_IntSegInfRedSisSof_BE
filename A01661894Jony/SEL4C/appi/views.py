@@ -2,6 +2,8 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from SEL4C.appi.serializers import UserSerializer, GroupSerializer
+from .models import CarSale
+from .serializers import CarSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,3 +22,10 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+class CarViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = CarSale.objects.all()
+    serializer_class = CarSerializer
+    permission_classes = [permissions.IsAuthenticated]
