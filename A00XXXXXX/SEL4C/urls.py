@@ -21,6 +21,7 @@ from SEL4C.app1 import views
 from drf_spectacular.views import SpectacularAPIView
 from drf_spectacular.views import SpectacularRedocView, SpectacularSwaggerView
 from django.urls import path
+from rest_framework_simplejwt import views as jwt_views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -40,4 +41,8 @@ urlpatterns = [
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     # Redoc UI:
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+
+    # JWT
+    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
