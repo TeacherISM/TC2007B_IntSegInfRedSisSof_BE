@@ -13,5 +13,6 @@ class Reminder(models.Model):
     class Meta:
         verbose_name = "Reminder"
         verbose_name_plural = "Reminders"
+        app_label = 'app1'
 
 # Create your models here.
