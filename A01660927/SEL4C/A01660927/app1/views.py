@@ -1,12 +1,10 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import UserSerializer, GroupSerializer
+from A01660927.app1.serializers import UserSerializer, GroupSerializer, SatelliteSerializer
+from A01660927.app1.models import SatelliteModel
 
-
+# Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -22,4 +20,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class SatelliteViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = SatelliteModel.objects.all()
+    serializer_class = SatelliteSerializer
     permission_classes = [permissions.IsAuthenticated]
