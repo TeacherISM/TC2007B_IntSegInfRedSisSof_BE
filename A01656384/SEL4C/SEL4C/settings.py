@@ -32,6 +32,10 @@ ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+<<<<<<< Updated upstream
+=======
+    'DEFAULT_SCHEMA_CLASS' : 'drf_spectacular.openapi.AutoSchema',
+>>>>>>> Stashed changes
     'PAGE_SIZE': 10
 }
 
@@ -44,6 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'app1',
+<<<<<<< Updated upstream
+=======
+    'drf_spectacular',
+>>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [

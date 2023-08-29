@@ -3,6 +3,9 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from app1.serializers import UserSerializer, GroupSerializer
 
+from .models import Videogames
+from .serializers import VideogamesSerializar
+
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited
@@ -18,3 +21,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+<<<<<<< Updated upstream
+=======
+
+class VideogamesViewSet(viewsets.ModelViewSet):
+    queryset = Videogames.objects.all()
+    serializer_class = VideogamesSerializar
+    permission_classes = [permissions.IsAuthenticated]
+>>>>>>> Stashed changes
