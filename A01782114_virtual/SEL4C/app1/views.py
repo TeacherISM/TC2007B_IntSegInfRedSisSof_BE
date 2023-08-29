@@ -18,3 +18,14 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+from .models import Schools
+from .serializers import SchoolSerializer
+
+class SchoolViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows model to be viewed or edited.
+    """
+    queryset = Schools.objects.all()
+    serializer_class = SchoolSerializer
+    permission_classes = [permissions.IsAuthenticated]
