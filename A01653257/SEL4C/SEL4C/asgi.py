@@ -1,5 +1,5 @@
 """
-ASGI config for SP project.
+ASGI config for SEL4C project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SP.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SEL4C.settings')
 
 application = get_asgi_application()
