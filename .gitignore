@@ -1,3 +1,10 @@
+ 451/A01660986FCZ_ACT43
+virtualEnv
+*.pyc
+*.pyo
+**/__pycache__/
+.vscode/
+
 # Django #
 *.log
 *.pot
@@ -135,3 +142,4 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+ master
