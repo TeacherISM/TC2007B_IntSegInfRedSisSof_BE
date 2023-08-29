@@ -31,9 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination', 
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'PAGE_SIZE': 10
 }
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'app1',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [

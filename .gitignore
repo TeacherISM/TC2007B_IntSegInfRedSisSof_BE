@@ -1,1 +1,5 @@
-A01662245/virtualEnv/
+Venv
+A01662245/SEL4C/db.sqlite3
+A01662245/SEL4C/SEL4C/__pycache__
+A01662245/SEL4C/app1/__pycache__
+A01662245/SEL4C/app1/migrations/__pycache__
