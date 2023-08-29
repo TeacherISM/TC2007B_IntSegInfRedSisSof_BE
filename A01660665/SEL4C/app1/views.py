@@ -16,3 +16,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+from .models import HomeModel #import your model
+from .serializers import HomeSerializer #Import your serializer
+
+class HomeViewSet (viewsets.ModelViewSet):
+
+    queryset=HomeModel.objects.all() #Set the queryset for the view
+    serializer_class=HomeSerializer #Set the serializern
+    permission_classes=[permissions.IsAuthenticated] #Set the permission classes
+    

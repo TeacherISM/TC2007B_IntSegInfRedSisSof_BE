@@ -14,3 +14,10 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+
+from .models import HomeModel
+
+class HomeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model=HomeModel
+        fields=['title','content','created_at']

@@ -17,6 +17,9 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+    #python manage.py spectacular --file schema.yml
+
 
 if __name__ == "__main__":
     main()
+

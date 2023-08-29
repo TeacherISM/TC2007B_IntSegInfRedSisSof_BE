@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'drf_spectacular',
+    'SEL4C.app1',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+REST_FRAMEWORK={
+    'DEFAULT_SCHEMA_CLASS':'drf_spectacular.openapi.AutoSchema',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
