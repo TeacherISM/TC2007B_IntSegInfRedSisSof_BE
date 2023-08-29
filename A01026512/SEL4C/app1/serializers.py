@@ -15,4 +15,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class NftSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Nft
-        filds = ['title', 'metadata', 'price']
+        fields = ['title', 'metadata', 'price']
