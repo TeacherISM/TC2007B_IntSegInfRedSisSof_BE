@@ -23,6 +23,8 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'activities', views.ActivityViewSet)
+router.register(r'advance', views.AdvanceViewSet)
+router.register(r'retro', views.RetroViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

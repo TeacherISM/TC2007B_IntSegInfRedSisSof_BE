@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group	
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import UserSerializer, GroupSerializer, ActivitySerializer
-from .models import ActivityModel
+from .serializers import UserSerializer, GroupSerializer, ActivitySerializer, AdvanceSerializer, RetroSerializer
+from .models import ActivityModel, AdvanceModel, RetroModel
 
 # Create your views here.
 
@@ -29,4 +29,20 @@ class ActivityViewSet(viewsets.ModelViewSet):
     '''
     queryset=ActivityModel.objects.all()
     serializer_class=ActivitySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class AdvanceViewSet(viewsets.ModelViewSet):
+    '''
+    API endpoint that allows groups to be viewed or edited.
+    '''
+    queryset=AdvanceModel.objects.all()
+    serializer_class=AdvanceSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class RetroViewSet(viewsets.ModelViewSet):
+    '''
+    API endpoint that allows groups to be viewed or edited.
+    '''
+    queryset=AdvanceModel.objects.all()
+    serializer_class=AdvanceSerializer
     permission_classes = [permissions.IsAuthenticated]
