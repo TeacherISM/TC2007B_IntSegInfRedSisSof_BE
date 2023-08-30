@@ -139,3 +139,5 @@ GitHub.sublime-settings
 =======
 A01662245/virtualEnv/
 >>>>>>> origin/master
+virtualEnv/
+.ds_store
