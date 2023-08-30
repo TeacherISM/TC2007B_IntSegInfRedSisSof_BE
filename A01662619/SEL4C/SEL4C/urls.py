@@ -21,6 +21,7 @@ from app1 import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
+router.register(r'home', views.HomeUserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 # Wire op our API using automatic URL routing.
