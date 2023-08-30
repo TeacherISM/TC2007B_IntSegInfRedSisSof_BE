@@ -17,4 +17,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class TelefonoSerializer(serializers.HyperlinkedModelSerializer):
       class Meta:
         model = TelefonoModel
-        field =  '__all__'
+        fields =  '__all__' 
