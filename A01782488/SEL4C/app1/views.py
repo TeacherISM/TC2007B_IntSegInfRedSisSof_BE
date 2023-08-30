@@ -5,6 +5,8 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from SEL4C.app1.serializers import UserSerializer, GroupSerializer
+from .models import HomeModel  # Import your model
+from .serializers import HomeSerializer # Import your serializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -22,3 +24,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class HomeViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows MyModel to be viewed or edited.
+    """
+    queryset = HomeModel.objects.all()  # Set the queryset for the view
+    serializer_class = HomeSerializer  # Set the serializer class
+    permission_classes = [permissions.IsAuthenticated]  # Set the permission classes
