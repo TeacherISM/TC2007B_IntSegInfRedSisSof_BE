@@ -22,6 +22,7 @@ from SEL4C.app1 import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'home', views.HomeViewSet)
 
 # Wire up our API using automatic URL routing
 # Additionaly, we include login URLs for the browsable API.
