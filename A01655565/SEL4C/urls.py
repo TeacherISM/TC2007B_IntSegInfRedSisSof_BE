@@ -23,7 +23,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'home', views.HomeViewSet)
+router.register(r'usuarios', views.UsuariosViewSet)
 
 # Wire up our API using automatic URL routing
 # Additionaly, we include login URLs for the browsable API.
