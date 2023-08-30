@@ -1,7 +1,10 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from serializers import UserSerializer, GroupSerializer
+from app1.serializers import UserSerializer, GroupSerializer
+
+from .models import GalletaModel
+from .serializers import GalletaSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,3 +23,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class GalletaViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = GalletaModel.objects.all()
+    serializer_class = GalletaSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
