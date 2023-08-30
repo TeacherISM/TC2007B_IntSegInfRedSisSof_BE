@@ -1,3 +1,7 @@
+/virtualEnv
+*.pyc
+*.sqlite3
+*.ipynb_checkpoints
 # Django #
 *.log
 *.pot
