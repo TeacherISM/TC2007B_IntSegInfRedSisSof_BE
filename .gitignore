@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Django #
 *.log
 *.pot
@@ -136,8 +135,6 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
-=======
-A01662245/virtualEnv/
->>>>>>> origin/master
+
 virtualEnv/
 .ds_store
