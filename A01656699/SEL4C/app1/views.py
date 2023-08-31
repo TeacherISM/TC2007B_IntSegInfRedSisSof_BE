@@ -28,7 +28,7 @@ class GroupViewSet(viewsets.ModelViewSet):
 from .models import UsuarioModel  # Import your model
 from .serializers import UsuarioSerializer # Import your serializer
 
-class HomeViewSet(viewsets.ModelViewSet):
+class UsuarioViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows MyModel to be viewed or edited.
     """

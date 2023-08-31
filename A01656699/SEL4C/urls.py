@@ -22,7 +22,7 @@ from SEL4C.app1 import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'usuario', views.HomeViewSet)
+router.register(r'usuario', views.UsuarioViewSet)
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 # Wire up our API using automatic URL routing.
