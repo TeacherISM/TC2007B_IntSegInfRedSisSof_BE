@@ -2,7 +2,7 @@ virtualEnv/
 .vscode/
 A01762646/SEL4C/__pycache__
 *.log
-
+Notebooks/.ipynb_checkpoints
 
 
 # Compiled Python files
@@ -24,6 +24,7 @@ A01762646/SEL4C/staticfiles/
 # Secret keys and settings files
 secret_key.txt
 local_settings.py
+
 
 # IDE or editor specific files
 .vscode/
