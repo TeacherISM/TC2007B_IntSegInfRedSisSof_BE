@@ -13965,3 +13965,5 @@ virtualEnv/lib/python3.11/site-packages/sqlparse/tokens.py
 virtualEnv/lib/python3.11/site-packages/sqlparse/utils.py
 virtualEnv/pyvenv.cfg
 virtualEnv/bin/activate
+A01661792/db.sqlite3
+.DS_Store
