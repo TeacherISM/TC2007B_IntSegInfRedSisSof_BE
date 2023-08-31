@@ -1,28 +1,37 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
-from rest_framework import permissions
-from SEL4C.app1.serializers import UserSerializer, GroupSerializer
+from rest_framework import permissions, viewsets
 from django.http import JsonResponse
-
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited
-    """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+from django.shortcuts import render
+from .models import Clientes, Ventas, AguasFrescas 
+from .serializers import ClientesSerializer, VentaSerializer, AguasFrescasSerializer
 
 
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 def home(request):
     return JsonResponse({'message': 'Hello World'})
+
+
+
+class AguasFrescasViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows AguasFrescas to be viewed or edited.
+    """
+    queryset = AguasFrescas.objects.all()
+    serializer_class = AguasFrescasSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class VentaViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Venta to be viewed or edited.
+    """
+    queryset = Ventas.objects.all()
+    serializer_class = VentaSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ClientesViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Clientes to be viewed or edited.
+    """
+    queryset = Clientes.objects.all()
+    serializer_class = ClientesSerializer
+    permission_classes = [permissions.IsAuthenticated]

@@ -1,0 +1,760 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /aguasfrescas/:
+    get:
+      operationId: aguasfrescas_list
+      description: API endpoint that allows AguasFrescas to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - aguasfrescas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAguasFrescasList'
+          description: ''
+    post:
+      operationId: aguasfrescas_create
+      description: API endpoint that allows AguasFrescas to be viewed or edited.
+      tags:
+      - aguasfrescas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AguasFrescas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AguasFrescas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AguasFrescas'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AguasFrescas'
+          description: ''
+  /aguasfrescas/{id}/:
+    get:
+      operationId: aguasfrescas_retrieve
+      description: API endpoint that allows AguasFrescas to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this aguas frescas.
+        required: true
+      tags:
+      - aguasfrescas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AguasFrescas'
+          description: ''
+    put:
+      operationId: aguasfrescas_update
+      description: API endpoint that allows AguasFrescas to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this aguas frescas.
+        required: true
+      tags:
+      - aguasfrescas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AguasFrescas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AguasFrescas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AguasFrescas'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AguasFrescas'
+          description: ''
+    patch:
+      operationId: aguasfrescas_partial_update
+      description: API endpoint that allows AguasFrescas to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this aguas frescas.
+        required: true
+      tags:
+      - aguasfrescas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAguasFrescas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAguasFrescas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAguasFrescas'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AguasFrescas'
+          description: ''
+    delete:
+      operationId: aguasfrescas_destroy
+      description: API endpoint that allows AguasFrescas to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this aguas frescas.
+        required: true
+      tags:
+      - aguasfrescas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /clientes/:
+    get:
+      operationId: clientes_list
+      description: API endpoint that allows Clientes to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - clientes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedClientesList'
+          description: ''
+    post:
+      operationId: clientes_create
+      description: API endpoint that allows Clientes to be viewed or edited.
+      tags:
+      - clientes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Clientes'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Clientes'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Clientes'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clientes'
+          description: ''
+  /clientes/{id}/:
+    get:
+      operationId: clientes_retrieve
+      description: API endpoint that allows Clientes to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this clientes.
+        required: true
+      tags:
+      - clientes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clientes'
+          description: ''
+    put:
+      operationId: clientes_update
+      description: API endpoint that allows Clientes to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this clientes.
+        required: true
+      tags:
+      - clientes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Clientes'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Clientes'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Clientes'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clientes'
+          description: ''
+    patch:
+      operationId: clientes_partial_update
+      description: API endpoint that allows Clientes to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this clientes.
+        required: true
+      tags:
+      - clientes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedClientes'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedClientes'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedClientes'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clientes'
+          description: ''
+    delete:
+      operationId: clientes_destroy
+      description: API endpoint that allows Clientes to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this clientes.
+        required: true
+      tags:
+      - clientes
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /ventas/:
+    get:
+      operationId: ventas_list
+      description: API endpoint that allows Venta to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - ventas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedVentaList'
+          description: ''
+    post:
+      operationId: ventas_create
+      description: API endpoint that allows Venta to be viewed or edited.
+      tags:
+      - ventas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Venta'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Venta'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Venta'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Venta'
+          description: ''
+  /ventas/{id}/:
+    get:
+      operationId: ventas_retrieve
+      description: API endpoint that allows Venta to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this ventas.
+        required: true
+      tags:
+      - ventas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Venta'
+          description: ''
+    put:
+      operationId: ventas_update
+      description: API endpoint that allows Venta to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this ventas.
+        required: true
+      tags:
+      - ventas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Venta'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Venta'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Venta'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Venta'
+          description: ''
+    patch:
+      operationId: ventas_partial_update
+      description: API endpoint that allows Venta to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this ventas.
+        required: true
+      tags:
+      - ventas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedVenta'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedVenta'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedVenta'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Venta'
+          description: ''
+    delete:
+      operationId: ventas_destroy
+      description: API endpoint that allows Venta to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this ventas.
+        required: true
+      tags:
+      - ventas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    AguasFrescas:
+      type: object
+      properties:
+        nombre_agua:
+          type: string
+          maxLength: 100
+        litros:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - litros
+      - nombre_agua
+    Clientes:
+      type: object
+      properties:
+        numero_de_cliente:
+          type: integer
+      required:
+      - numero_de_cliente
+    PaginatedAguasFrescasList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AguasFrescas'
+    PaginatedClientesList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clientes'
+    PaginatedVentaList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Venta'
+    PatchedAguasFrescas:
+      type: object
+      properties:
+        nombre_agua:
+          type: string
+          maxLength: 100
+        litros:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedClientes:
+      type: object
+      properties:
+        numero_de_cliente:
+          type: integer
+    PatchedVenta:
+      type: object
+      properties:
+        cliente:
+          $ref: '#/components/schemas/Clientes'
+        agua_fresca:
+          $ref: '#/components/schemas/AguasFrescas'
+        fecha_venta:
+          type: string
+          format: date-time
+          readOnly: true
+    Venta:
+      type: object
+      properties:
+        cliente:
+          $ref: '#/components/schemas/Clientes'
+        agua_fresca:
+          $ref: '#/components/schemas/AguasFrescas'
+        fecha_venta:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - agua_fresca
+      - cliente
+      - fecha_venta
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
