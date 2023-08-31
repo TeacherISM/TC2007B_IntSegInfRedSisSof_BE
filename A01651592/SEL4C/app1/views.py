@@ -3,7 +3,9 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from app1.serializers import UserSerializer, GroupSerializer
+from app1.serializers import UserSerializer, GroupSerializer, AlumnoSerializer
+from app1.models import AlumnoModel
+
 # Create your views here.
 
 """
@@ -28,6 +30,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class AlumnoViewSet(viewsets.ModelViewSet):
+    queryset = AlumnoModel.objects.all()
+    serializer_class = AlumnoSerializer
+    permissions_classes = [permissions.IsAuthenticated]
 
 """
 Una vista basada en conjuntos (también conocida como ViewSet) en Django REST Framework (DRF) es una vista que proporciona automáticamente una serie de acciones CRUD (Crear, Leer, Actualizar, Eliminar) para un modelo específico. Esta vista es muy útil para simplificar la creación de APIs RESTful que manejan operaciones en conjuntos de objetos de un modelo.

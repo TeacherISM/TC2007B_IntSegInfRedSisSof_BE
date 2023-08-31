@@ -5,14 +5,16 @@ from .models import AlumnoModel
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=User
-        fields= ['url', 'username', 'email', 'groups']
+        #fields= ['url', 'username', 'email', 'groups']
+        fields = '__all__'
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Group
-        field=['url', 'name']
+        #field=['url', 'name']
+        fields = '__all__'
 
 class AlumnoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AlumnoModel
-        fields = {'nombre', 'apellido', 'fecha_nacimiento', 'direccion', 'correo_electronico', 'telefono', 'fecha_inscripcion'}
+        fields = '__all__'
