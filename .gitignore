@@ -6,6 +6,12 @@ __pycache__
 db.sqlite3
 media
 
+
+#Cache y virtualEnv
+
+/virtualEnv
+.DS_Store
+
 # Backup files # 
 *.bak 
 
