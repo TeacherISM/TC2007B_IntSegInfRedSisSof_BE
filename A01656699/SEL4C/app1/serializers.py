@@ -12,3 +12,10 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+
+from .models import Usuario
+
+class UsuarioSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = ['nombre', 'contraseña', 'edad', 'genero', 'puntuacion', 'created_at']
