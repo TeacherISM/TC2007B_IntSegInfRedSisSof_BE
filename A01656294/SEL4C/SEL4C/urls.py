@@ -17,15 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 from rest_framework import routers
-from appl import views
+from SEL4C.appl import views
+from drf_spectacular.views import SpectacularAPIView
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'group', views.GroupViewSet)
+router.register(r'producto',views.ProductoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include(router.urls)),
     path('api-auth/',include('rest_framework.urls', namespace='rest_framework')),
-    path('home/',views.home)
+    path('home/',views.home),
+    path('api/schema/',SpectacularAPIView.as_view(),name='schema'),
+    path('api/schema/', SpectacularAPIView.as_view(), name ='schema'),
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'),name='redoc'),
 ]

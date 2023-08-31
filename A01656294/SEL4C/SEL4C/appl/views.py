@@ -4,8 +4,10 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from appl.serializers import UserSerializer, GroupSerializer
+from SEL4C.appl.serializers import UserSerializer, GroupSerializer
 from django.http import JsonResponse
+from .models import Producto
+from .serializers import ProductoSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
@@ -15,6 +17,11 @@ class UserViewSet(viewsets.ModelViewSet):
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 def home(request):
