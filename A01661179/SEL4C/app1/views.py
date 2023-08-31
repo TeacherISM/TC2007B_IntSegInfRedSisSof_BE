@@ -2,7 +2,8 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from SEL4C.app1.serializers import UserSerializer, GroupSerializer
-
+from .models import userApp
+from .serializers import UserAppSerializer
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
@@ -14,3 +15,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
+class UserAppSet(viewsets.ModelViewSet):
+    queryset= userApp.objects.all()
+    serializer_class = UserAppSerializer
+    permission_classes = [permissions.IsAuthenticated]
