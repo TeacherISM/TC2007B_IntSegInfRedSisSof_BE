@@ -25,3 +25,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+from .models import UsuarioModel  # Import your model
+from .serializers import UsuarioSerializer # Import your serializer
+
+class HomeViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows MyModel to be viewed or edited.
+    """
+    queryset = UsuarioModel.objects.all()  # Set the queryset for the view
+    serializer_class = UsuarioSerializer  # Set the serializer class
+    permission_classes = [permissions.IsAuthenticated]  # Set the permission classes
