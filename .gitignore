@@ -1,3 +1,49 @@
-virtualEnv/
+# Ignore compiled Python files
 __pycache__/
-.ipynb_checkpoints/
+*.pyc
+*.pyo
+
+# Jupyter Notebook 
+.ipynb_checkpoints 
+
+# Ignore the virtual environment
+venv/
+env/
+*.env
+virtualEnv/
+
+# Ignore local development settings
+*.sqlite3
+*.db
+
+# Ignore media files
+media/
+
+# Ignore generated documentation
+docs/_build/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore temporary files
+*.log
+*.swp
+*.swo
+*~
+
+# Ignore secret keys and sensitive information
+*.secret_key
+*.settings
+
+# Ignore development-specific files
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Ignore environment configuration files
+.env
+
+# Ignore user-specific files
+*.DS_Store
+Thumbs.db
