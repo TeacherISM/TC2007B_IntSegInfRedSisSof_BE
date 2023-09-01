@@ -15,4 +15,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class ReportSerializer (serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Report
-        fields=['id','title','descripcion','fecha']
+        fields=['title','descripcion','fecha']
