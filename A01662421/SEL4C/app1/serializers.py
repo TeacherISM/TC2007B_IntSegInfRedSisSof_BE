@@ -15,4 +15,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class HomeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = HomeModel 
-        fields = ['id', 'title','description','price','bedrooms', 'bathrooms', 'area','address', 'created_at']
+        fields = ['title','description','price','bedrooms', 'bathrooms', 'area','address', 'created_at']
