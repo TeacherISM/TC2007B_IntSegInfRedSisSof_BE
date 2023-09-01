@@ -1,0 +1,992 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /actividad/:
+    get:
+      operationId: actividad_retrieve
+      description: API endpoint that allows Actividades to be viewed or edited.
+      tags:
+      - actividad
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: actividad_create
+      description: API endpoint that allows Actividades to be viewed or edited.
+      tags:
+      - actividad
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          description: No response body
+  /actividad/{idActividad}/:
+    get:
+      operationId: actividad_retrieve_2
+      description: API endpoint that allows Actividades to be viewed or edited.
+      parameters:
+      - in: path
+        name: idActividad
+        schema:
+          type: integer
+        description: A unique integer value identifying this actividad.
+        required: true
+      tags:
+      - actividad
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: actividad_update
+      description: API endpoint that allows Actividades to be viewed or edited.
+      parameters:
+      - in: path
+        name: idActividad
+        schema:
+          type: integer
+        description: A unique integer value identifying this actividad.
+        required: true
+      tags:
+      - actividad
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: actividad_partial_update
+      description: API endpoint that allows Actividades to be viewed or edited.
+      parameters:
+      - in: path
+        name: idActividad
+        schema:
+          type: integer
+        description: A unique integer value identifying this actividad.
+        required: true
+      tags:
+      - actividad
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: actividad_destroy
+      description: API endpoint that allows Actividades to be viewed or edited.
+      parameters:
+      - in: path
+        name: idActividad
+        schema:
+          type: integer
+        description: A unique integer value identifying this actividad.
+        required: true
+      tags:
+      - actividad
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /admin/:
+    get:
+      operationId: admin_list
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminList'
+          description: ''
+    post:
+      operationId: admin_create
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Admin'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Admin'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Admin'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+          description: ''
+  /admin/{id}/:
+    get:
+      operationId: admin_retrieve
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this admin.
+        required: true
+      tags:
+      - admin
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+          description: ''
+    put:
+      operationId: admin_update
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this admin.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Admin'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Admin'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Admin'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+          description: ''
+    patch:
+      operationId: admin_partial_update
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this admin.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdmin'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdmin'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdmin'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+          description: ''
+    delete:
+      operationId: admin_destroy
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this admin.
+        required: true
+      tags:
+      - admin
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /archivo/:
+    get:
+      operationId: archivo_retrieve
+      description: API endpoint that allows Archivos to be viewed or edited.
+      tags:
+      - archivo
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: archivo_create
+      description: API endpoint that allows Archivos to be viewed or edited.
+      tags:
+      - archivo
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          description: No response body
+  /archivo/{idArchivo}/:
+    get:
+      operationId: archivo_retrieve_2
+      description: API endpoint that allows Archivos to be viewed or edited.
+      parameters:
+      - in: path
+        name: idArchivo
+        schema:
+          type: integer
+        description: A unique integer value identifying this archivo.
+        required: true
+      tags:
+      - archivo
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: archivo_update
+      description: API endpoint that allows Archivos to be viewed or edited.
+      parameters:
+      - in: path
+        name: idArchivo
+        schema:
+          type: integer
+        description: A unique integer value identifying this archivo.
+        required: true
+      tags:
+      - archivo
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: archivo_partial_update
+      description: API endpoint that allows Archivos to be viewed or edited.
+      parameters:
+      - in: path
+        name: idArchivo
+        schema:
+          type: integer
+        description: A unique integer value identifying this archivo.
+        required: true
+      tags:
+      - archivo
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: archivo_destroy
+      description: API endpoint that allows Archivos to be viewed or edited.
+      parameters:
+      - in: path
+        name: idArchivo
+        schema:
+          type: integer
+        description: A unique integer value identifying this archivo.
+        required: true
+      tags:
+      - archivo
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /pregunta/:
+    get:
+      operationId: pregunta_retrieve
+      description: API endpoint that allows Preguntas to be viewed or edited.
+      tags:
+      - pregunta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: pregunta_create
+      description: API endpoint that allows Preguntas to be viewed or edited.
+      tags:
+      - pregunta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          description: No response body
+  /pregunta/{idPregunta}/:
+    get:
+      operationId: pregunta_retrieve_2
+      description: API endpoint that allows Preguntas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idPregunta
+        schema:
+          type: integer
+        description: A unique integer value identifying this pregunta.
+        required: true
+      tags:
+      - pregunta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: pregunta_update
+      description: API endpoint that allows Preguntas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idPregunta
+        schema:
+          type: integer
+        description: A unique integer value identifying this pregunta.
+        required: true
+      tags:
+      - pregunta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: pregunta_partial_update
+      description: API endpoint that allows Preguntas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idPregunta
+        schema:
+          type: integer
+        description: A unique integer value identifying this pregunta.
+        required: true
+      tags:
+      - pregunta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: pregunta_destroy
+      description: API endpoint that allows Preguntas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idPregunta
+        schema:
+          type: integer
+        description: A unique integer value identifying this pregunta.
+        required: true
+      tags:
+      - pregunta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /respuesta/:
+    get:
+      operationId: respuesta_retrieve
+      description: API endpoint that allows Respuestas to be viewed or edited.
+      tags:
+      - respuesta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: respuesta_create
+      description: API endpoint that allows Respuestas to be viewed or edited.
+      tags:
+      - respuesta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          description: No response body
+  /respuesta/{idRespuesta}/:
+    get:
+      operationId: respuesta_retrieve_2
+      description: API endpoint that allows Respuestas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idRespuesta
+        schema:
+          type: integer
+        description: A unique integer value identifying this respuesta.
+        required: true
+      tags:
+      - respuesta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: respuesta_update
+      description: API endpoint that allows Respuestas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idRespuesta
+        schema:
+          type: integer
+        description: A unique integer value identifying this respuesta.
+        required: true
+      tags:
+      - respuesta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: respuesta_partial_update
+      description: API endpoint that allows Respuestas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idRespuesta
+        schema:
+          type: integer
+        description: A unique integer value identifying this respuesta.
+        required: true
+      tags:
+      - respuesta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: respuesta_destroy
+      description: API endpoint that allows Respuestas to be viewed or edited.
+      parameters:
+      - in: path
+        name: idRespuesta
+        schema:
+          type: integer
+        description: A unique integer value identifying this respuesta.
+        required: true
+      tags:
+      - respuesta
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /usuario/:
+    get:
+      operationId: usuario_list
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - usuario
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedEmprendedorList'
+          description: ''
+    post:
+      operationId: usuario_create
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      tags:
+      - usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Emprendedor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Emprendedor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Emprendedor'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emprendedor'
+          description: ''
+  /usuario/{username}/:
+    get:
+      operationId: usuario_retrieve
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+        description: A unique value identifying this emprendedor.
+        required: true
+      tags:
+      - usuario
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emprendedor'
+          description: ''
+    put:
+      operationId: usuario_update
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+        description: A unique value identifying this emprendedor.
+        required: true
+      tags:
+      - usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Emprendedor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Emprendedor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Emprendedor'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emprendedor'
+          description: ''
+    patch:
+      operationId: usuario_partial_update
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+        description: A unique value identifying this emprendedor.
+        required: true
+      tags:
+      - usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedEmprendedor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedEmprendedor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedEmprendedor'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emprendedor'
+          description: ''
+    delete:
+      operationId: usuario_destroy
+      description: API endpoint that allows Usuarios to be viewed or edited.
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+        description: A unique value identifying this emprendedor.
+        required: true
+      tags:
+      - usuario
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Admin:
+      type: object
+      properties:
+        username:
+          type: string
+          maxLength: 40
+        correo:
+          type: string
+          maxLength: 40
+        firstname:
+          type: string
+        lastname:
+          type: string
+      required:
+      - correo
+      - firstname
+      - lastname
+      - username
+    Emprendedor:
+      type: object
+      properties:
+        username:
+          type: string
+          maxLength: 40
+        correo:
+          type: string
+          maxLength: 40
+        firstname:
+          type: string
+        lastname:
+          type: string
+        degree:
+          type: string
+        institution:
+          type: string
+        gender:
+          type: string
+        age:
+          type: integer
+        country:
+          type: string
+        studyField:
+          type: string
+      required:
+      - age
+      - correo
+      - country
+      - degree
+      - firstname
+      - gender
+      - institution
+      - lastname
+      - studyField
+      - username
+    PaginatedAdminList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Admin'
+    PaginatedEmprendedorList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Emprendedor'
+    PatchedAdmin:
+      type: object
+      properties:
+        username:
+          type: string
+          maxLength: 40
+        correo:
+          type: string
+          maxLength: 40
+        firstname:
+          type: string
+        lastname:
+          type: string
+    PatchedEmprendedor:
+      type: object
+      properties:
+        username:
+          type: string
+          maxLength: 40
+        correo:
+          type: string
+          maxLength: 40
+        firstname:
+          type: string
+        lastname:
+          type: string
+        degree:
+          type: string
+        institution:
+          type: string
+        gender:
+          type: string
+        age:
+          type: integer
+        country:
+          type: string
+        studyField:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
