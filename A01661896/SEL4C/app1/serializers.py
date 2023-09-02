@@ -16,5 +16,5 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class PCMasterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PCMaster
-        fields = ['id','procesador', 'tarjetaGrafica','NumVentiladores', 'FuentePoder', 'FechaConsulta']
+        fields = ['procesador', 'tarjetaGrafica','NumVentiladores', 'FuentePoder', 'FechaConsulta']
         
