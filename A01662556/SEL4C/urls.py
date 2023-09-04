@@ -26,7 +26,7 @@ from drf_yasg import openapi
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'appusers', views.UserModelViewSet)
+router.register(r'actividades', views.ActividadViewSet)
 
 schema_view = get_schema_view(
     openapi.Info(

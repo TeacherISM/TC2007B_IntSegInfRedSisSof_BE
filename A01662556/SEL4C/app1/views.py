@@ -3,8 +3,8 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from SEL4C.app1.serializers import UserSerializer, GroupSerializer
-from .models import UserModel
-from .serializers import UserModelSerializer
+from .models import Actividad
+from .serializers import ActividadSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -22,11 +22,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-class UserModelViewSet(viewsets.ModelViewSet):
+class ActividadViewSet(viewsets.ModelViewSet):
     """
     API endpoint that MyModel to be viewed or edited.
     """
-    queryset = UserModel.objects.all()
-    serializer_class = UserModelSerializer
+    queryset = Actividad.objects.all()
+    serializer_class = ActividadSerializer
     permission_classes = [permissions.IsAuthenticated]
     

@@ -2,7 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-class UserModel(models.Model):
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=50)
-    progress_id = models.CharField(max_length=10)
+class Actividad(models.Model):
+    titulo = models.CharField(default="",max_length=50)
+    descripcion = models.CharField(default="", max_length=350)
+    tokens = models.IntegerField(default=-1)
+
+    def __str__ (self):
+        return "{} - Tokens: {}".format(self.titulo, self.tokens)
