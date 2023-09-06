@@ -16,12 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from drf_spectacular.views import SpectacularAPIView
 from rest_framework import routers
 from app1 import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'home', views.HomeUserViewSet)
+router.register(r'usuarios', views.HomeUserViewSet)
+router.register(r'sesiones', views.SessionViewSet)
+router.register(r'encuestas', views.SurveyViewSet)
+router.register(r'entregas', views.DeliverViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 # Wire op our API using automatic URL routing.
@@ -30,4 +34,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace = 'rest_framework')),
     path('admin/', admin.site.urls),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
 ]
